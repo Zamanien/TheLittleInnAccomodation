@@ -7,21 +7,22 @@ public class Room
    
    //atributter
    private int rumNo; 
-   private boolean occupied = false; 
+   private double price;
+   private boolean occupied = true; 
    private int kvm; 
    private int beds; 
+   private boolean clean = true; 
    
    
-   public Room()
-   {   
-   }
-   
-   public Room(int rumNo, int kvm, int beds)
+   public Room() { } 
+   public Room(int rumNo, double price, int kvm, int beds)
    {
-      this.rumNo = rumNo;  
+      this.rumNo = rumNo; 
+      this.price = price; 
       this.kvm = kvm;
-      this.occupied = false;  
-      this.beds = beds; 
+      this.occupied = true;  
+      this.beds = beds;
+      this.clean = true; 
    }
    
    //getters og setters for attributterne
@@ -29,10 +30,19 @@ public class Room
    {
       return this.rumNo; 
    }
-   public void setRum(int rumNo)
+      public void setRum(int rumNo)
           {
           this.rumNo = rumNo; 
           }
+
+   public double getPrice()
+   {
+      return this.price; 
+   }
+         public void setPrice(double price)
+         {
+         this.price = price;
+         }  
    
    public boolean getOccupied()
    {
@@ -49,7 +59,7 @@ public class Room
    }
        public void setKvm(int kvm)
           {
-              this.kvm = kvm; 
+          this.kvm = kvm; 
           }
   
    public int beds()
@@ -58,11 +68,22 @@ public class Room
    }
         public void getBeds(int beds)
          {
-             this.beds = beds;
+         this.beds = beds;
          }
    
+  
+   public boolean clean()
+   {
+         return this.clean;     
+   }
+          public void setClean(boolean clean)
+          {
+          this.clean = clean; 
+          }
+   
+   
    public String toString(){
-      return "Rum Nummer: " + this.rumNo + ", kvm: " + this.kvm + ", Antal senge: " + this.beds; 
+      return "Rum Nummer: " + this.rumNo + ", Prices: " + this.price + ", kvm: " + this.kvm + ", Beds: " + this.beds + ", Clean: " + this.clean + ", Available: " + occupied;
    }
    
   /* public void testRooms(int rum, String status)
