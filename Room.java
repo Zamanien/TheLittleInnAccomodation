@@ -8,10 +8,10 @@ public class Room
    //atributter
    private int rumNo; 
    private double price;
-   private boolean occupied = true; 
+   private boolean occupied; 
    private int kvm; 
    private int beds; 
-   private boolean clean = true; 
+   private boolean clean; 
    
    
    public Room() { } 
@@ -81,16 +81,10 @@ public class Room
           this.clean = clean; 
           }
    
-   
+   //Print
    public String toString(){
       return "Rum Nummer: " + this.rumNo + ", Prices: " + this.price + ", kvm: " + this.kvm + ", Beds: " + this.beds + ", Clean: " + this.clean + ", Available: " + occupied;
    }
-   
-  /* public void testRooms(int rum, String status)
-   {
-      setRum(rum);
-      setStatus(status); 
-   }*/
-   
+  
 
 }

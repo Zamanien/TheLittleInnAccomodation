@@ -1,5 +1,5 @@
 import java.util.*;
-
+//Klassen input indtager String 
 public class Input
 {
    public static String getString()
@@ -9,6 +9,6 @@ public class Input
    }
    public static void println(String text) 
    {
-      System.out.println(text); 
+      System.out.println(text);
    }
 }

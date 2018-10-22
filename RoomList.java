@@ -5,13 +5,12 @@ import java.util.ArrayList;
 public class RoomList
 {
 
-/*
  public static String getString()
    {
       Scanner sc = new Scanner(System.in);
       return sc.nextLine();
    }
-   */
+   
    
    //Arraylist over værelser
    ArrayList<Room> roomList = new ArrayList<Room>();   
