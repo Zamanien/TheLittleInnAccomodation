@@ -6,7 +6,7 @@ public class Room
    //Konstruktør 
    
    //atributter
-   private int rumNo; 
+   private int roomNumber; 
    private double price;
    private boolean occupied; 
    private int kvm; 
@@ -15,9 +15,9 @@ public class Room
    
    
    public Room() { } 
-   public Room(int rumNo, double price, int kvm, int beds)
+   public Room(int roomNumber, double price, int kvm, int beds)
    {
-      this.rumNo = rumNo; 
+      this.roomNumber = roomNumber; 
       this.price = price; 
       this.kvm = kvm;
       this.occupied = true;  
@@ -26,13 +26,13 @@ public class Room
    }
    
    //getters og setters for attributterne
-   public int getRumNo()
+   public int getRoomNumber()
    {
-      return this.rumNo; 
+      return this.roomNumber; 
    }
-      public void setRum(int rumNo)
+      public void setRoomNumber(int roomNumber)
           {
-          this.rumNo = rumNo; 
+          this.roomNumber= roomNumber;
           }
 
    public double getPrice()
@@ -83,7 +83,7 @@ public class Room
    
    //Print
    public String toString(){
-      return "Rum Nummer: " + this.rumNo + ", Prices: " + this.price + ", kvm: " + this.kvm + ", Beds: " + this.beds + ", Clean: " + this.clean + ", Available: " + this.occupied;
+      return "Rum Nummer: " + this.roomNumber + ", Prices: " + this.price + ", kvm: " + this.kvm + ", Beds: " + this.beds + ", Clean: " + this.clean + ", Available: " + this.occupied;
    }
   
 

@@ -5,7 +5,7 @@ public class Cleaning
      
         for(int i = 0; i < roomsList.roomList.size(); i++) {
                         
-              if(roomsList.roomList.get(i).getRumNo() == roomNumber)
+              if(roomsList.roomList.get(i).getRoomNumber() == roomNumber)
               {
                 roomsList.roomList.get(i).setClean(true);
                 break;

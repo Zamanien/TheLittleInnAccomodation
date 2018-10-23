@@ -51,12 +51,12 @@ public class Menu
 				//Looper gennem alle værelser 
 				for(int i = 0; i < roomsList.roomList.size(); i++) {
 
-					if(roomsList.roomList.get(i).getRumNo() == roomNumber)
+					if(roomsList.roomList.get(i).getRoomNumber() == roomNumber)
 					{
 						if(roomsList.roomList.get(i).getOccupied())
 						{
 							roomsList.roomList.get(i).setOccupied(false);
-							String CustomerName = allCustomers.createCustomer(roomsList.roomList.get(i).getRumNo());
+							String CustomerName = allCustomers.createCustomer(roomsList.roomList.get(i).getRoomNumber());
 							System.out.println("Reservation has been completed");
 						}
 						else
@@ -95,7 +95,7 @@ public class Menu
 				}
 				for(int i = 0; i < roomsList.roomList.size(); i++) {
 
-					if(roomsList.roomList.get(i).getRumNo() == roomNumber)
+					if(roomsList.roomList.get(i).getRoomNumber() == roomNumber)
 					{
 						roomsList.roomList.get(i).setClean(false);
 						roomsList.roomList.get(i).setOccupied(true);
