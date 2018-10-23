@@ -11,4 +11,23 @@ public class Input
    {
       System.out.println(text);
    }
+   public static int getInt()
+   {
+   		int result;
+		while(true)
+		{
+			//Tjekker om inputtet er et tal
+			Scanner sc = new Scanner (System.in);
+			if(sc.hasNextInt())
+			{
+				result = sc.nextInt();
+				break;
+			}
+			else
+			{
+				System.out.println("Not a number, please try again");
+			}
+		}
+		return result;
+   }
 }

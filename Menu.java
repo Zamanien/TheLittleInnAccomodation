@@ -41,29 +41,14 @@ public class Menu
 
 
 			choice = Input.getString();
-
-
-						 //if-else metoder over valg
+			//if-else metoder over valg
 			if(choice.equals("1"))
 			{
 				System.out.println("Make a reservation");
-
-				int roomNumber;
+				
 				System.out.println("Choose a room");
-				while(true)
-				{
-												//Tjekker om inputtet er et tal
-					Scanner sc = new Scanner (System.in);
-					if(sc.hasNextInt())
-					{
-						roomNumber = sc.nextInt();
-						break;
-					}
-					else{
-						System.out.println("Not a number, please try again");
-					}
-				}
-										 //Looper gennem alle værelser 
+				int roomNumber = Input.getInt();
+				//Looper gennem alle værelser 
 				for(int i = 0; i < roomsList.roomList.size(); i++) {
 
 					if(roomsList.roomList.get(i).getRumNo() == roomNumber)
@@ -82,8 +67,7 @@ public class Menu
 					}
 				}
 			}
-
-									//Listen fra klassen RoomList kaldes hvis "2" indtastes
+			//Listen fra klassen RoomList kaldes hvis "2" indtastes
 			else if(choice.equals("2"))
 			{
 				System.out.println("Room List: ");
@@ -97,21 +81,8 @@ public class Menu
 
 			else if(choice.equals("4"))
 			{
-				int roomNumber;
 				System.out.println("Please enter the room number to check out");
-				while(true)
-				{
-												//Tjekker om inputtet er et tal
-					Scanner sc = new Scanner (System.in);
-					if(sc.hasNextInt())
-					{
-						roomNumber = sc.nextInt();
-						break;
-					}
-					else{
-						System.out.println("Not a number, please try again");
-					}
-				}
+				int roomNumber = Input.getInt();
 										 //Looper igennem kunderne i allCustomers listen
 				for(int i = 0; i < allCustomers.customerList.size(); i++) {
 												//Checker for om der er en kunde med det værelse
@@ -138,21 +109,8 @@ public class Menu
 
 			else if(choice.equals("5"))
 			{
-				int roomNumber;
 				System.out.println("Please enter the room number to clean");
-				while(true)
-				{
-												//Tjekker om inputtet er et tal
-					Scanner sc = new Scanner (System.in);
-					if(sc.hasNextInt())
-					{
-						roomNumber = sc.nextInt();
-						break;
-					}
-					else{
-						System.out.println("Not a number, please try again");
-					}
-				}
+				int roomNumber = Input.getInt();
 				for(int i = 0; i < roomsList.roomList.size(); i++) {
 
 					if(roomsList.roomList.get(i).getRumNo() == roomNumber)
@@ -170,5 +128,4 @@ public class Menu
 			}
 		}
 	}
-	
 }
