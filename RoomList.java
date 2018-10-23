@@ -60,23 +60,6 @@ public class RoomList
          roomList.add(new Room(k, 250, 56, 1)); 
       }
    }
-   
-   
-   /* //Man kan skabe ny værelse herfra) 
-   public void createRoom(){
-      int roomNo = 6;
-      int kvm = 75;
-      roomList.add(new Room(roomNo, kvm));
-      
-   }
-   //Slette værelser herfra
-   public void deleteRoom(int roomNo){
-      for(int i = 0; i < roomList.size(); i++){
-         if(roomList.get(i).getRumNo() == roomNo){
-            roomList.remove(i);
-         }
-   }
-   */
    //print af arraylists
    public void printRoomList(){
       for(int i = 0; i < roomList.size(); i++) {
