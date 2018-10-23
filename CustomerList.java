@@ -8,7 +8,7 @@ public class CustomerList
 //ArrayList over kunder
 
    public ArrayList<Customer> customerList = new ArrayList<Customer>();
-   public String createCustomer(int room)
+   public void createCustomer(int room)
    {
    
       //Her oprettes kunder
@@ -50,20 +50,26 @@ public class CustomerList
       }
       
       addCustomer(passportNumber, customerName, phoneNumber, room);
-      
-      return customerName;
    }
    public void addCustomer(int passportNumber, String customerName, int phoneNumber, int room)
    {
       Customer customer = new Customer(passportNumber, customerName, phoneNumber, room);
-      /*
-      customer.setPassportNumber(passportNumber);
-      customer.setPhoneNumber(phoneNumber);
-      customer.setCustomerName(customerName);
-      */
       //Her tilføjes kunder
       customerList.add(customer);
       
+   }
+   public void removeCustomer(int roomNumber)
+   {
+      //Looper igennem alle kunder i listen
+      for(int i = 0; i < customerList.size(); i++) {
+         //Checker for om der er en kunde med det værelse
+         if(customerList.get(i).getRoom() == roomNumber)
+         {
+            //Fjerner kunden
+            customerList.remove(i);
+            break;
+         }
+      }
    }
    //Print af customers
    public void printCustomers()
@@ -71,8 +77,6 @@ public class CustomerList
       int i;
       for(i=0;i<customerList.size();i++)
       {
-         //Customer current = customerList.get(i);
-         //System.out.println("Customer #:"+ (i+1) +"\nName: "+ current.getCustomerName()+"\nPassport number: "+getPassportNumber()+"\nPhone Number: "+getPhoneNumber()+"\n\n");
          System.out.println(customerList.get(i).toString() + "\n");
          
       }

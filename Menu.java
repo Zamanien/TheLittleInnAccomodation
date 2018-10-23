@@ -48,24 +48,7 @@ public class Menu
 				
 				System.out.println("Choose a room");
 				int roomNumber = Input.getInt();
-				//Looper gennem alle værelser 
-				for(int i = 0; i < roomsList.roomList.size(); i++) {
-
-					if(roomsList.roomList.get(i).getRoomNumber() == roomNumber)
-					{
-						if(roomsList.roomList.get(i).getOccupied())
-						{
-							roomsList.roomList.get(i).setOccupied(false);
-							String CustomerName = allCustomers.createCustomer(roomsList.roomList.get(i).getRoomNumber());
-							System.out.println("Reservation has been completed");
-						}
-						else
-						{
-							System.out.println("Room isn't available");
-						}
-						break;
-					}
-				}
+				roomsList.reserveRoom(roomNumber, allCustomers);
 			}
 			//Listen fra klassen RoomList kaldes hvis "2" indtastes
 			else if(choice.equals("2"))
@@ -83,39 +66,16 @@ public class Menu
 			{
 				System.out.println("Please enter the room number to check out");
 				int roomNumber = Input.getInt();
-										 //Looper igennem kunderne i allCustomers listen
-				for(int i = 0; i < allCustomers.customerList.size(); i++) {
-												//Checker for om der er en kunde med det værelse
-					if(allCustomers.customerList.get(i).getRoom() == roomNumber)
-					{
-													 //Fjerner kunden
-						allCustomers.customerList.remove(i);
-						break;
-					}
-				}
-				for(int i = 0; i < roomsList.roomList.size(); i++) {
-
-					if(roomsList.roomList.get(i).getRoomNumber() == roomNumber)
-					{
-						roomsList.roomList.get(i).setClean(false);
-						roomsList.roomList.get(i).setOccupied(true);
-						break;
-					}
-				}
+				allCustomers.removeCustomer(roomNumber);
+				roomsList.checkOut(roomNumber);
 				System.out.println("Customer has been checked out");
-										 //Checkout.checkout(); 
 			}
-
-
 			else if(choice.equals("5"))
 			{
 				System.out.println("Please enter the room number to clean");
 				int roomNumber = Input.getInt();
-            
-            Cleaning.cleaning(roomNumber, roomsList);
-				
-				System.out.println("Room "+roomNumber+" has been cleaned");
-										 //Checkout.checkout(); 
+            	Cleaning.cleaning(roomNumber, roomsList);
+				System.out.println("Room "+roomNumber+" has been cleaned"); 
 			}
 			else if(choice.equals("6"))
 			{

@@ -5,15 +5,41 @@ import java.util.ArrayList;
 public class RoomList
 {
 
- public static String getString()
-   {
-      Scanner sc = new Scanner(System.in);
-      return sc.nextLine();
-   }
-   
-   
    //Arraylist over værelser
-   ArrayList<Room> roomList = new ArrayList<Room>();   
+   ArrayList<Room> roomList = new ArrayList<Room>();
+   
+   public void reserveRoom(int roomNumber, CustomerList customerList)
+   {
+      for(int i = 0; i < roomList.size(); i++) {
+
+         if(roomList.get(i).getRoomNumber() == roomNumber)
+         {
+            if(roomList.get(i).getOccupied())
+            {
+               roomList.get(i).setOccupied(false);
+               customerList.createCustomer(roomList.get(i).getRoomNumber());
+               System.out.println("Reservation has been completed");
+            }
+            else
+            {
+               System.out.println("Room isn't available");
+            }
+            break;
+         }
+      }
+   }
+   public void checkOut(int roomNumber)
+   {
+      for(int i = 0; i < roomList.size(); i++) {
+
+         if(roomList.get(i).getRoomNumber() == roomNumber)
+         {
+            roomList.get(i).setClean(false);
+            roomList.get(i).setOccupied(true);
+            break;
+         }
+      }
+   } 
    
    public RoomList()
    //Forloop fra værelse 1-3 (Andre variabler)
@@ -49,9 +75,6 @@ public class RoomList
          if(roomList.get(i).getRumNo() == roomNo){
             roomList.remove(i);
          }
-         
-      
-      
    }
    */
    //print af arraylists
