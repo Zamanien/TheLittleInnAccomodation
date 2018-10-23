@@ -111,14 +111,9 @@ public class Menu
 			{
 				System.out.println("Please enter the room number to clean");
 				int roomNumber = Input.getInt();
-				for(int i = 0; i < roomsList.roomList.size(); i++) {
-
-					if(roomsList.roomList.get(i).getRumNo() == roomNumber)
-					{
-						roomsList.roomList.get(i).setClean(true);
-						break;
-					}
-				}
+            
+            Cleaning.cleaning(roomNumber, roomsList);
+				
 				System.out.println("Room "+roomNumber+" has been cleaned");
 										 //Checkout.checkout(); 
 			}
