@@ -29,7 +29,7 @@ public class Menu
 			System.out.println("|                                           |");
 			System.out.println("| Menu:                                     |");
          System.out.println("|                                           |");
-			System.out.println("| -Press '1' to make a reservatin           |");
+			System.out.println("| -Press '1' to make a reservation          |");
 			System.out.println("| -Press '2' to view rooms                  |");
 			System.out.println("| -Press '3' to view Customer List          |");
 			System.out.println("| -Press '4' to checkout a Customer         |");
