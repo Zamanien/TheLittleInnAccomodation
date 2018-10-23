@@ -83,7 +83,7 @@ public class Room
    
    //Print
    public String toString(){
-      return "Rum Nummer: " + this.rumNo + ", Prices: " + this.price + ", kvm: " + this.kvm + ", Beds: " + this.beds + ", Clean: " + this.clean + ", Available: " + occupied;
+      return "Rum Nummer: " + this.rumNo + ", Prices: " + this.price + ", kvm: " + this.kvm + ", Beds: " + this.beds + ", Clean: " + this.clean + ", Available: " + this.occupied;
    }
   
 

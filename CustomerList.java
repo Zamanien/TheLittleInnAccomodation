@@ -13,7 +13,7 @@ public class CustomerList
    {
       
    }
-   public String createCustomer()
+   public String createCustomer(int room)
    {
    
       //Her oprettes kunder
@@ -54,13 +54,13 @@ public class CustomerList
          }
       }
       
-      addCustomer(passportNumber, customerName, phoneNumber);
+      addCustomer(passportNumber, customerName, phoneNumber, room);
       
       return customerName;
    }
-   public void addCustomer(int passportNumber, String customerName, int phoneNumber)
+   public void addCustomer(int passportNumber, String customerName, int phoneNumber, int room)
    {
-      Customer customer = new Customer(passportNumber, customerName, phoneNumber);
+      Customer customer = new Customer(passportNumber, customerName, phoneNumber, room);
       /*
       customer.setPassportNumber(passportNumber);
       customer.setPhoneNumber(phoneNumber);
@@ -79,7 +79,7 @@ public class CustomerList
       {
          //Customer current = customerList.get(i);
          //Input.println("Customer #:"+ (i+1) +"\nName: "+ current.getCustomerName()+"\nPassport number: "+getPassportNumber()+"\nPhone Number: "+getPhoneNumber()+"\n\n");
-         System.out.println(customerList.get(i).toString());
+         System.out.println(customerList.get(i).toString() + "\n");
          
       }
       

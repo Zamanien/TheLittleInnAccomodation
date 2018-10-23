@@ -4,14 +4,15 @@ public class Customer
    private int passportNumber; 
    private String customerName; 
    private int phoneNumber; 
-   private int id;
+   private int room;
    
    
-   public Customer(int passportNumber, String customerName, int phoneNumber) 
+   public Customer(int passportNumber, String customerName, int phoneNumber, int room) 
    {
    this.passportNumber = passportNumber; 
    this.customerName = customerName;
-   this.phoneNumber = phoneNumber; 
+   this.phoneNumber = phoneNumber;
+   this.room = room;
    }
    
  
@@ -45,12 +46,20 @@ public class Customer
       {
          this.phoneNumber = phoneNumber; 
       }
-      
+    public int getRoom() 
+      {
+         return this.room;
+      }
+
+      public void setRoom(int room)
+      {
+         this.room = room; 
+      }
       
       //print
    public String toString()
    {
-      return "Customer Name: " + this.customerName + ", Phone Number: " + this.phoneNumber + ", Passport Number: " + passportNumber;
+      return "Customer Name: " + this.customerName + ", Phone Number: " + this.phoneNumber + ", Passport Number: " + passportNumber+ ", Room: "+room;
    }
   
 }

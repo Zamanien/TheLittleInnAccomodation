@@ -4,6 +4,21 @@ public class Menu
       public static void main(String[] args) 
       {
       
+      System.out.println("________________________________");
+      System.out.println("|         Velkommen til        |");
+      System.out.println("|        The Little Inn        |");
+      System.out.println("|                              |");
+      System.out.println("|        Guldbergvej 22        |");
+      System.out.println("|           København          |");
+      System.out.println("|            Danmark           |");
+      System.out.println("|                              |");
+      System.out.println("|        Tlf: 48275562         |");
+      System.out.println("|      Email: Brown@TLN.dk     |");
+      System.out.println("|                              |");
+      System.out.println("|                              |");
+      System.out.println("|             Menu:            |");
+      System.out.println("|______________________________|");
+      
       //Konstruktør som kalder på klassen (RoomList)
       RoomList roomsList = new RoomList();
       CustomerList allCustomers = new CustomerList();
@@ -13,10 +28,18 @@ public class Menu
              while(!end)
              {
              //Liste over valg
-             System.out.println("Menu: \nPress '1' to make a reservation");
-             System.out.println("Press '2' to view rooms");
-             System.out.println("Press '3' to view Customer List");
-             System.out.println("Press '4' to quit");
+             System.out.println("____________________________________________");
+             System.out.println("|                                           |");
+             System.out.println("| Menu:                                     |");
+             System.out.println("| -Press '1' to make a reservatin           |");
+             System.out.println("| -Press '2' to view rooms                  |");
+             System.out.println("| -Press '3' to view Customer List          |");
+             System.out.println("| -Press '4' to checkout a Customer         |");
+             System.out.println("| -Press '5' to clean a room                |");
+             System.out.println("| -Press '6' to quit                        |");
+             System.out.println("|___________________________________________|");
+             
+             
              choice = Input.getString();
             
              
@@ -24,7 +47,7 @@ public class Menu
                if(choice.equals("1"))
                   {
                      System.out.println("Make a reservation");
-                     String CustomerName = allCustomers.createCustomer();
+                     
                      int roomNumber;
                      Input.println("Choose a room");
                      while(true)
@@ -45,10 +68,18 @@ public class Menu
                         
                         if(roomsList.roomList.get(i).getRumNo() == roomNumber)
                         {
-                           roomsList.roomList.get(i).setOccupied(false);
-                           Input.println("Reservation has been completed");
+                           if(roomsList.roomList.get(i).getOccupied())
+                           {
+                              roomsList.roomList.get(i).setOccupied(false);
+                              String CustomerName = allCustomers.createCustomer(roomsList.roomList.get(i).getRumNo());
+                              Input.println("Reservation has been completed");
+                           }
+                           else
+                           {
+                           Input.println("Room isn't available");
+                           }
                            break;
-                        };
+                        }
                      }
                   }
                   
@@ -63,14 +94,79 @@ public class Menu
                   {
                      allCustomers.printCustomers();
                   }
-          
-                else if(choice.equals("4"))
+                  
+                  else if(choice.equals("4"))
                   {
-                     end = true;
+                     int roomNumber;
+                     Input.println("Please enter the room number to check out");
+                     while(true)
+                     {
+                        //Tjekker om inputtet er et tal
+                        Scanner sc = new Scanner (System.in);
+                        if(sc.hasNextInt())
+                        {
+                           roomNumber = sc.nextInt();
+                           break;
+                        }
+                        else{
+                        Input.println("Not a number, please try again");
+                        }
+                     }
+                     //Looper igennem kunderne i allCustomers listen
+                     for(int i = 0; i < allCustomers.customerList.size(); i++) {
+                        //Checker for om der er en kunde med det værelse
+                        if(allCustomers.customerList.get(i).getRoom() == roomNumber)
+                        {
+                           //Fjerner kunden
+                           allCustomers.customerList.remove(i);
+                           break;
+                        }
+                     }
+                     for(int i = 0; i < roomsList.roomList.size(); i++) {
+                        
+                        if(roomsList.roomList.get(i).getRumNo() == roomNumber)
+                        {
+                           roomsList.roomList.get(i).setClean(false);
+                           roomsList.roomList.get(i).setOccupied(true);
+                           break;
+                        }
+                     }
+                     Input.println("Customer has been checked out");
+                     //Checkout.checkout(); 
                   }
+                  
+          
                 else if(choice.equals("5"))
+                  {
+                     int roomNumber;
+                     Input.println("Please enter the room number to clean");
+                     while(true)
+                     {
+                        //Tjekker om inputtet er et tal
+                        Scanner sc = new Scanner (System.in);
+                        if(sc.hasNextInt())
+                        {
+                           roomNumber = sc.nextInt();
+                           break;
+                        }
+                        else{
+                        Input.println("Not a number, please try again");
+                        }
+                     }
+                     for(int i = 0; i < roomsList.roomList.size(); i++) {
+                        
+                        if(roomsList.roomList.get(i).getRumNo() == roomNumber)
+                        {
+                           roomsList.roomList.get(i).setClean(true);
+                           break;
+                        }
+                     }
+                     Input.println("Room "+roomNumber+" has been cleaned");
+                     //Checkout.checkout(); 
+                  }
+                else if(choice.equals("6"))
                 {
-                  allCustomers.printCustomers();
+                  end = true;
                 }
              }
          

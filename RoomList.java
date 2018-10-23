@@ -21,6 +21,7 @@ public class RoomList
       for (int  i = 1; i <= 3; i++)
       {
          roomList.add(new Room(i,500, 92, 4));
+         
       }
       //ForLoop fra værelse 4-6 (andre variabler)
       for (int j = 4; j <= 6; j++)
@@ -56,7 +57,8 @@ public class RoomList
    //print af arraylists
    public void printRoomList(){
       for(int i = 0; i < roomList.size(); i++) {
-         System.out.println(roomList.get(i).toString());
+         System.out.println(roomList.get(i).toString() + "\n");
       }
+      
    }
 }
