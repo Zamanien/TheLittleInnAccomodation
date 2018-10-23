@@ -8,11 +8,6 @@ public class CustomerList
 //ArrayList over kunder
 
    public ArrayList<Customer> customerList = new ArrayList<Customer>();
-   
-   public CustomerList()
-   {
-      
-   }
    public String createCustomer(int room)
    {
    
@@ -21,9 +16,9 @@ public class CustomerList
       String customerName = "";
       int phoneNumber = 12345678;
       boolean validInput = false;
-      Input.println("PLease enter customer name");
+      System.out.println("PLease enter customer name");
       customerName = Input.getString();
-      Input.println("Enter passport #");
+      System.out.println("Enter passport #");
       //Checker om der skrives et tal som telefon nummer og for passport nummeret.
       while(!validInput)
       {
@@ -35,11 +30,11 @@ public class CustomerList
             validInput = true;
          }
          else{
-         Input.println("Not a number, please try again");
+         System.out.println("Not a number, please try again");
          }
       }
       validInput = false;
-      Input.println("Enter phone number");
+      System.out.println("Enter phone number");
       while(!validInput)
       {
          
@@ -50,7 +45,7 @@ public class CustomerList
             validInput = true;
          }
          else{
-         Input.println("Not a number, please try again");
+         System.out.println("Not a number, please try again");
          }
       }
       
@@ -73,17 +68,13 @@ public class CustomerList
    //Print af customers
    public void printCustomers()
    {
-      
       int i;
       for(i=0;i<customerList.size();i++)
       {
          //Customer current = customerList.get(i);
-         //Input.println("Customer #:"+ (i+1) +"\nName: "+ current.getCustomerName()+"\nPassport number: "+getPassportNumber()+"\nPhone Number: "+getPhoneNumber()+"\n\n");
+         //System.out.println("Customer #:"+ (i+1) +"\nName: "+ current.getCustomerName()+"\nPassport number: "+getPassportNumber()+"\nPhone Number: "+getPhoneNumber()+"\n\n");
          System.out.println(customerList.get(i).toString() + "\n");
          
       }
-      
    }
-
-
 }
