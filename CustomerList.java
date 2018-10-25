@@ -16,7 +16,7 @@ public class CustomerList
       String customerName = "";
       int phoneNumber = 12345678;
       boolean validInput = false;
-      System.out.println("PLease enter customer name");
+      System.out.println("Please enter customer name");
       customerName = Input.getString();
       System.out.println("Enter passport #");
       //Checker om der skrives et tal som telefon nummer og for passport nummeret.
