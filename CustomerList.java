@@ -16,9 +16,10 @@ public class CustomerList
       String customerName = "";
       int phoneNumber = 12345678;
       boolean validInput = false;
-      System.out.println("PLease enter customer name");
+      System.out.println("PLease enter customer name: ");
       customerName = Input.getString();
-      System.out.println("Enter passport #");
+      System.out.println("Enter passport number: ");
+      
       //Checker om der skrives et tal som telefon nummer og for passport nummeret.
       while(!validInput)
       {
@@ -30,11 +31,11 @@ public class CustomerList
             validInput = true;
          }
          else{
-         System.out.println("Not a number, please try again");
+         System.out.println("Not a number, please try again!");
          }
       }
       validInput = false;
-      System.out.println("Enter phone number");
+      System.out.println("Enter phone number: ");
       while(!validInput)
       {
          
@@ -45,7 +46,7 @@ public class CustomerList
             validInput = true;
          }
          else{
-         System.out.println("Not a number, please try again");
+         System.out.println("Not a number, please try again!");
          }
       }
       
@@ -53,7 +54,9 @@ public class CustomerList
    }
    public void addCustomer(int passportNumber, String customerName, int phoneNumber, int room)
    {
+      // Her tilføjes constructor
       Customer customer = new Customer(passportNumber, customerName, phoneNumber, room);
+      
       //Her tilføjes kunder
       customerList.add(customer);
       
@@ -62,7 +65,7 @@ public class CustomerList
    {
       //Looper igennem alle kunder i listen
       for(int i = 0; i < customerList.size(); i++) {
-         //Checker for om der er en kunde med det værelse
+         //Checker om der er en kunde med det værelse
          if(customerList.get(i).getRoom() == roomNumber)
          {
             //Fjerner kunden

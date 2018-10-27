@@ -3,7 +3,7 @@ public class Menu
 {
 	public static void main(String[] args) 
 	{
-
+      //velkomst besked
 		System.out.println("________________________________");
 		System.out.println("|         Velkommen til        |");
 		System.out.println("|        The Little Inn        |");
@@ -24,24 +24,14 @@ public class Menu
 
 		while(!end)
 		{
-		 //Liste over valg
-			System.out.println("____________________________________________");
-			System.out.println("|                                           |");
-			System.out.println("| Menu:                                     |");
-         	System.out.println("|                                           |");
-			System.out.println("| -Press '1' to make a reservation          |");
-			System.out.println("| -Press '2' to view rooms                  |");
-			System.out.println("| -Press '3' to view Customer List          |");
-			System.out.println("| -Press '4' to checkout a Customer         |");
-			System.out.println("| -Press '5' to clean a room                |");
-			System.out.println("| -Press '6' to quit                        |");
-			System.out.println("|___________________________________________|");
-
+         //Printer menuen
+         printMenu();
 
 			choice = Input.getString();
 			//if-else metoder over valg
 			if(choice.equals("1"))
 			{
+         
 				System.out.println("\nMake a reservation");
 				
 				System.out.println("Choose a room\n");
@@ -79,6 +69,26 @@ public class Menu
 			{
 				end = true;
 			}
+         else
+         {
+            System.out.println("Ups");
+            end = true;
+         }
 		}
 	}
+   public static void printMenu()
+   {
+   		 //Liste over valg
+			System.out.println("____________________________________________");
+			System.out.println("|                                           |");
+			System.out.println("| Menu:                                     |");
+         System.out.println("|                                           |");
+			System.out.println("| -Press '1' to make a reservation          |");
+			System.out.println("| -Press '2' to view rooms                  |");
+			System.out.println("| -Press '3' to view Customer List          |");
+			System.out.println("| -Press '4' to checkout a Customer         |");
+			System.out.println("| -Press '5' to clean a room                |");
+			System.out.println("| -Press '6' to quit                        |");
+			System.out.println("|___________________________________________|");
+   }
 }

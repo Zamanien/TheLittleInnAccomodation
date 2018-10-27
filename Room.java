@@ -1,11 +1,8 @@
 //Værelse (Se det som en seperat klasse i Diagram model)
 public class Room
 {
-
-   //Brug ArraysList
-   //Konstruktør 
    
-   //atributter
+   //attributter
    private int roomNumber; 
    private double price;
    private boolean occupied; 
@@ -30,10 +27,11 @@ public class Room
    {
       return this.roomNumber; 
    }
-      public void setRoomNumber(int roomNumber)
-          {
-          this.roomNumber= roomNumber;
-          }
+   
+   public void setRoomNumber(int roomNumber)
+   {
+      this.roomNumber= roomNumber;
+   }
 
    public double getPrice()
    {
@@ -83,7 +81,7 @@ public class Room
    
    //Print
    public String toString(){
-      return "Rum Nummer: " + this.roomNumber + ", Prices: " + this.price + ", kvm: " + this.kvm + ", Beds: " + this.beds + ", Clean: " + this.clean + ", Available: " + this.occupied;
+      return "Room Number:" + this.roomNumber + ", Prices: " + this.price + ", m2: " + this.kvm + ", Beds: " + this.beds + ", Clean: " + this.clean + ", Available: " + this.occupied;
    }
   
 

@@ -58,7 +58,7 @@ public class RoomList
       for (int k = 7; k <= 10; k++)
       {
          roomList.add(new Room(k, 250, 56, 1)); 
-      }
+      } 
    }
    //print af arraylists
    public void printRoomList(){

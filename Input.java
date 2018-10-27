@@ -13,15 +13,16 @@ public class Input
    }
    public static int getInt()
    {
-   		int result;
-		while(true)
+      boolean validInput = false;
+   	int result = 1;
+		while(!validInput)
 		{
-			//Tjekker om inputtet er et tal
+			//Tjekker om inputtet er et tal (hasNext - returnerer 'true'    hvis der er et andet token i dets input) 
 			Scanner sc = new Scanner (System.in);
 			if(sc.hasNextInt())
 			{
 				result = sc.nextInt();
-				break;
+				validInput = true;
 			}
 			else
 			{
